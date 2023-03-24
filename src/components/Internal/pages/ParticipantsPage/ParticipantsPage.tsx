@@ -31,7 +31,7 @@ export const ParticipantsPage = () => {
       <Box mb="30px">
         <ParticipantFilters />
       </Box>
-      <Grid gap="30px" templateColumns="1fr 1fr 1fr 1fr">
+      <Grid gap="30px" templateColumns="1fr 1fr 1fr">
         {filteredParticipants.map((participant) => (
           <ParticipantCard key={participant.id} participant={participant} />
         ))}

@@ -17,8 +17,8 @@ export const ParticipantFilters = () => {
   }
 
   return (
-    <HStack spacing="48" justify="space-between" wrap="wrap">
-      <InputGroup flex="1">
+    <HStack justify="space-between" wrap="wrap">
+      <InputGroup flex="1" maxW="400px">
         <InputLeftElement pointerEvents="none">
           <Icon as={FiSearch} color="muted" boxSize="5" />
         </InputLeftElement>
