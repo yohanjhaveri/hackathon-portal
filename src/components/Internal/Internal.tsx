@@ -1,4 +1,4 @@
-import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
+import { useDocumentData } from "react-firebase-hooks/firestore";
 import { doc } from "firebase/firestore";
 import { firestore } from "../../api/config";
 import { emailToId } from "../../config";
@@ -18,9 +18,7 @@ export type InternalProps = {
 };
 
 export const Internal = ({ user }: InternalProps) => {
-  const [participant, loading] = useDocumentDataOnce(
-    doc(firestore, "participants", emailToId(user.email || ""))
-  );
+  const [participant, loading] = useDocumentData(doc(firestore, "participants", emailToId(user.email || "")));
 
   if (loading) {
     return <Loader />;
