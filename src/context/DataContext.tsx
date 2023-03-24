@@ -26,8 +26,8 @@ const findTeam = (teams: Team[], participant: Participant) => {
 export const DataContext = createContext<DataContextValue>(null);
 
 export const DataProvider = ({ user, participant, children }: DataProviderProps) => {
-  const [participants, _pLoading, pError] = useQueryCollection<Participant>("participants");
-  const [teams, _tLoading, tError] = useQueryCollection<Team>("teams");
+  const [participants, , pError] = useQueryCollection<Participant>("participants");
+  const [teams, , tError] = useQueryCollection<Team>("teams");
 
   const error = pError || tError || "";
 
