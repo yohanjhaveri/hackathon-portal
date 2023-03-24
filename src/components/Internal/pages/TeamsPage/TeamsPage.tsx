@@ -1,20 +1,17 @@
-import { Box, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/react";
+import { Flex, Grid, Icon, Text } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { isTeamRegistrationPhaseActive } from "../../../../constants/env";
+import { HeadWrapper } from "../../components/reusable/HeadWrapper";
 import { useData } from "../../../../context/DataContext";
+import { isTeamRegistrationPhaseActive } from "../../../../constants/env";
 import { TeamCard } from "./TeamCard";
 
 export const TeamsPage = () => {
   const data = useData();
 
   return (
-    <Box padding="50px" width="100%">
-      <Box mb="30px">
-        <Heading size="xs">Team Directory</Heading>
-        <Text color="muted">Search and filter through all teams</Text>
-      </Box>
-      <Grid gap="30px" templateColumns="1fr 1fr 1fr 1fr">
+    <HeadWrapper title="Team Directory" subtitle="Search and filter through all teams">
+      <Grid gap="30px" templateColumns="1fr 1fr 1fr">
         {isTeamRegistrationPhaseActive && (
           <Link to="/create-team">
             <Flex
@@ -43,6 +40,6 @@ export const TeamsPage = () => {
           <TeamCard key={team.id} team={team} />
         ))}
       </Grid>
-    </Box>
+    </HeadWrapper>
   );
 };
