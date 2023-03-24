@@ -17,31 +17,59 @@ import type { Participant } from "../../types";
 export const routes = [
   {
     path: "/create-team",
-    element: <TeamFormPage />,
+    element: (
+      <PageWrapper>
+        <TeamFormPage />
+      </PageWrapper>
+    ),
   },
   {
     path: "/update-team",
-    element: <TeamFormPage edit />,
+    element: (
+      <PageWrapper>
+        <TeamFormPage edit />
+      </PageWrapper>
+    ),
   },
   {
     path: "/participants",
-    element: <ParticipantsPage />,
+    element: (
+      <PageWrapper>
+        <ParticipantsPage />
+      </PageWrapper>
+    ),
   },
   {
     path: "/participants/:id",
-    element: <ParticipantPage />,
+    element: (
+      <PageWrapper>
+        <ParticipantPage />
+      </PageWrapper>
+    ),
   },
   {
     path: "/teams",
-    element: <TeamsPage />,
+    element: (
+      <PageWrapper>
+        <TeamsPage />
+      </PageWrapper>
+    ),
   },
   {
     path: "/teams/:id",
-    element: <TeamPage />,
+    element: (
+      <PageWrapper>
+        <TeamPage />
+      </PageWrapper>
+    ),
   },
   {
     path: "*",
-    element: <Navigate to="/participants" />,
+    element: (
+      <PageWrapper>
+        <Navigate to="/participants" />
+      </PageWrapper>
+    ),
   },
 ];
 
@@ -56,9 +84,7 @@ export const Portal = ({ user, participant }: PortalProps) => {
   return (
     <DataProvider user={user} participant={participant}>
       <FiltersProvider>
-        <PageWrapper>
-          <RouterProvider router={router} />
-        </PageWrapper>
+        <RouterProvider router={router} />
       </FiltersProvider>
     </DataProvider>
   );
