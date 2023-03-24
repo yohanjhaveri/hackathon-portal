@@ -10,7 +10,7 @@ export const LoginPage = () => {
     <Stack h="100vh" w="100vw" justify="center" align="center" textAlign="center" spacing="12">
       <Box>
         <Heading size="sm" fontWeight="extrabold" letterSpacing="tight" lineHeight="tall">
-          <Highlight query="Hackathon" styles={{ color: "brand.500" }}>
+          <Highlight query={unique.eventName} styles={{ color: "brand.500" }}>
             {heading}
           </Highlight>
         </Heading>
