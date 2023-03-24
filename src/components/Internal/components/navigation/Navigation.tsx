@@ -19,7 +19,7 @@ export const Navigation = () => {
       borderRightColor="gray.200"
     >
       <Stack w="100%" spacing="3">
-        <NavigationHeader name={data?.participant.name || ""} />
+        <NavigationHeader id={data?.participant.id || ""} name={data?.participant.name || ""} />
         <NavigationBody />
       </Stack>
       <NavigationFooter />
