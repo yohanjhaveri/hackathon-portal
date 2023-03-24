@@ -24,18 +24,16 @@ export const ParticipantCard = ({ participant }: ParticipantCardProps) => (
 
         <Stack spacing="1" mt="2">
           <HStack fontSize="sm">
-            <Icon color="brand.500" as={FaAt} />
-            <a href={`mailto:${participant.email}`} target="_blank" rel="noreferrer">
-              <Text color="blue.500" fontWeight="500">
-                {participant.email}
-              </Text>
-            </a>
-          </HStack>
-          <HStack fontSize="sm">
             <Icon color="brand.500" as={FaMap} />
             <Text>
               {participant.location} ({participant.timezone})
             </Text>
+          </HStack>
+          <HStack fontSize="sm">
+            <Icon color="brand.500" as={FaAt} />
+            <a href={`mailto:${participant.email}`} target="_blank" rel="noreferrer">
+              <Text>{participant.email}</Text>
+            </a>
           </HStack>
         </Stack>
 

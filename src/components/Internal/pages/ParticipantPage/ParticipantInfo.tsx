@@ -1,5 +1,5 @@
 import { Avatar, Flex, Heading, HStack, Icon, Stack, Tag, Text, Wrap } from "@chakra-ui/react";
-import { FaMap } from "react-icons/fa";
+import { FaAt, FaMap } from "react-icons/fa";
 import { Participant } from "../../../../types";
 
 export type ParticipantInfoProps = {
@@ -17,20 +17,26 @@ export const ParticipantInfo = ({ participant }: ParticipantInfoProps) => (
       name={participant.name}
       color="gray.500"
       bg="gray.300"
+      fontWeight="700"
     />
     <Flex direction="column" align="center" mb="30px">
       <Heading size="md" fontWeight="extrabold" letterSpacing="tight">
         {participant.name}
       </Heading>
       <Text color="gray.600">{participant.position}</Text>
-      <a href={`mailto:${participant.email}`} target="_blank" rel="noreferrer">
-        <Text color="blue.500" fontSize="sm" fontWeight="500">
-          {participant.email}
-        </Text>
-      </a>
     </Flex>
     <Flex direction="column" align="center" px="50px">
       <Stack direction="row" spacing="6" mt="4" fontSize="sm" fontWeight="medium" color="brand.500">
+        <HStack>
+          <Icon color="brand.500" as={FaAt} />
+          <Text color="muted" fontWeight="500">
+            <a href={`mailto:${participant.email}`} target="_blank" rel="noreferrer">
+              <Text color="blue.500" fontSize="sm" fontWeight="500">
+                {participant.email}
+              </Text>
+            </a>
+          </Text>
+        </HStack>
         <HStack>
           <Icon color="brand.500" as={FaMap} />
           <Text color="muted" fontWeight="500">
