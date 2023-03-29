@@ -19,9 +19,11 @@ export const useQueryCollection = <T>(collectionName: string) => {
     try {
       setQuery((prev) => ({ ...prev, loading: true }));
 
-      listenCollection<T>(collectionName, (value) => {
+      const unsub = listenCollection<T>(collectionName, (value) => {
         setQuery((prev) => ({ ...prev, loading: false, data: value }));
       });
+
+      return () => unsub();
     } catch (error) {
       setQuery((prev) => ({ ...prev, loading: false, error: error as FirestoreError }));
     }
