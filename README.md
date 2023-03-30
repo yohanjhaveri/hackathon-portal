@@ -2,6 +2,10 @@
 
 A web portal to support participant registration, team formation, and ideation for remote hackathons.
 
+## Demo
+
+Demo Website: https://remote-hackathon-portal.web.app
+
 ## Configuration
 
 There is a configuration file at `src/config.js` directory for convenient personalization of this portal.
@@ -10,7 +14,7 @@ There is a configuration file at `src/config.js` directory for convenient person
 
 The phase flag combination MUST be out of one of these for the portal to work properly. You can set these flags in a `.env` file in the root of the project.
 
-### Registration Phase
+### 1. Registration Phase
 
 - Participants can only register for the hackathon
 
@@ -20,7 +24,7 @@ REACT_APP_TEAM_REGISTRATION_PHASE=inactive
 REACT_APP_IDEA_REGISTRATION_PHASE=inactive
 ```
 
-### Registration + Team Formation Phase
+### 2. Registration + Team Formation Phase (Parallel)
 
 - Participants can still register for the hackathon.
 - Participants can also access the portal to:
@@ -36,7 +40,7 @@ REACT_APP_TEAM_REGISTRATION_PHASE=active
 REACT_APP_IDEA_REGISTRATION_PHASE=active
 ```
 
-### Team Formation Phase
+### 3. Team Formation Phase
 
 - Participants can no longer register for the hackathon
 - Participants can however still access the portal to:
@@ -52,7 +56,7 @@ REACT_APP_TEAM_REGISTRATION_PHASE=active
 REACT_APP_IDEA_REGISTRATION_PHASE=active
 ```
 
-### Ideation Phase
+### 4. Ideation Phase
 
 - Participants can no longer register for the hackathon
 - Participants can no longer create/join teams
@@ -72,7 +76,7 @@ REACT_APP_TEAM_REGISTRATION_PHASE=inactive
 REACT_APP_IDEA_REGISTRATION_PHASE=active
 ```
 
-### Final Phase
+### 5. Completion Phase
 
 - Participants can no longer register for the hackathon
 - Participants can no longer create/join teams
