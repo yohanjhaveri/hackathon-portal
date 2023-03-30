@@ -6,6 +6,8 @@ A web portal to support participant registration, team formation, and ideation f
 
 Demo Website: https://remote-hackathon-portal.web.app
 
+<img width="1470" alt="Screenshot 2023-03-29 at 11 44 28 PM" src="https://user-images.githubusercontent.com/35095726/228723468-2e6c8d77-8dd3-49b6-85ee-b6b33b57eb24.png">
+
 ## Configuration
 
 There is a configuration file at `src/config.js` directory for convenient personalization of this portal.
