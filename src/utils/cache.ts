@@ -1,5 +1,5 @@
-import type { Filters } from "../context/FiltersContext";
-import type { Participant } from "../types";
+import { Filters } from "../context";
+import { Participant } from "../types";
 
 const FILTERS_KEY = "filters";
 const PARTICIPANTS_KEY = "participants";

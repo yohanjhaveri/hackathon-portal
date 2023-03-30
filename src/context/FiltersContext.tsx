@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { filtersSchema } from "../utils/filtering";
+import { Location, Status, Timezone } from "../config";
 import { loadFilters, saveFilters } from "../utils/cache";
-import type { Location, Status, Timezone } from "../types";
+import { filtersSchema } from "../utils/filtering";
 
 export type Filters = {
   search: string;

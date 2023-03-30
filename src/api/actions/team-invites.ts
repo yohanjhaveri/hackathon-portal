@@ -1,6 +1,6 @@
+import { Team } from "../../types";
 import { updateTeam } from "../mutators/update-team";
 import { removeUserMembershipFromAllTeams, removeUserRequestsFromAllTeams } from "./team-helpers";
-import type { Team } from "../../types";
 
 export const sendInvite = (team: Team, participantId: string) => {
   return updateTeam({

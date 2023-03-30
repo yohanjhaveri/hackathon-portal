@@ -1,13 +1,9 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import { Main } from "./components/Main";
+import { Main } from "./pages/Main";
 import { theme } from "./theme";
 
-function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <Main />
-    </ChakraProvider>
-  );
-}
-
-export default App;
+export const App = () => (
+  <ChakraProvider theme={theme}>
+    <Main />
+  </ChakraProvider>
+);

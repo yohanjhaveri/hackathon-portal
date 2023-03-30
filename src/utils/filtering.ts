@@ -1,6 +1,6 @@
 import { locations, status, timezones } from "../config";
-import type { Filters } from "../context/FiltersContext";
-import type { FiltersSchema, Participant, Team } from "../types";
+import { Filters } from "../context";
+import { FiltersSchema, Participant, Team } from "../types";
 
 export const filtersSchema: FiltersSchema = {
   location: {

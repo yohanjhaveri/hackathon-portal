@@ -1,6 +1,6 @@
-import { updateTeam } from "../mutators/update-team";
+import { Team } from "../../types";
 import { deleteTeam } from "../mutators/delete-team";
-import type { Team } from "../../types";
+import { updateTeam } from "../mutators/update-team";
 
 // also used for "leave team"
 export const removeMember = (team: Team, participantId: string) => {

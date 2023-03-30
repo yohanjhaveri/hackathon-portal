@@ -1,6 +1,6 @@
+import { Team } from "../../types";
 import { removeMember } from "./team-members";
 import { rejectRequest } from "./team-requests";
-import type { Team } from "../../types";
 
 export const removeUserMembershipFromAllTeams = (teams: Team[], participantId: string) => {
   const memberships = teams.filter((team) => team.members.find((m) => m.id === participantId));

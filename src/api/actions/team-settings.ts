@@ -1,8 +1,8 @@
+import { Values } from "../../pages/Internal/Portal/TeamFormPage/TeamFormPage";
+import { Team } from "../../types";
 import { createTeam } from "../mutators/create-team";
 import { updateTeam } from "../mutators/update-team";
 import { removeUserMembershipFromAllTeams, removeUserRequestsFromAllTeams } from "./team-helpers";
-import type { Team } from "../../types";
-import type { Values } from "../../components/Internal/pages/TeamFormPage/TeamFormPage";
 
 export const makeTeam = async (teams: Team[], participantId: string, values: Values) => {
   await removeUserMembershipFromAllTeams(teams, participantId);

@@ -1,4 +1,4 @@
-import type { ToastId, UseToastOptions } from "@chakra-ui/react";
+import { ToastId, UseToastOptions } from "@chakra-ui/react";
 
 type Toast = (options?: UseToastOptions | undefined) => ToastId;
 

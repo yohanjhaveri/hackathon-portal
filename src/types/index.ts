@@ -1,8 +1,8 @@
-import { readonlyLocations, readonlyStatus, readonlyTimezones } from "../config";
+import { Location, Status, Timezone } from "../config";
 
-export type Location = (typeof readonlyLocations)[number];
-export type Timezone = (typeof readonlyTimezones)[number];
-export type Status = (typeof readonlyStatus)[number];
+export type Member = {
+  id: string;
+};
 
 export type Participant = {
   id: string;
@@ -24,10 +24,6 @@ export type Team = {
   members: Member[];
   invites: Member[];
   requests: Member[];
-};
-
-export type Member = {
-  id: string;
 };
 
 export type FiltersSchema = {

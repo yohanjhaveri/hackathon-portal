@@ -1,9 +1,12 @@
 import { createContext, useContext } from "react";
-import { Center, Heading, Text, VStack } from "@chakra-ui/react";
-import { useQueryCollection } from "../hooks/useQueryCollection";
+import { useCollectionData } from "react-firebase-hooks/firestore";
+import { User } from "firebase/auth";
+import { queryParticipants } from "../api/queries/query-participants";
+import { queryTeams } from "../api/queries/query-teams";
+import { Error } from "../components/Error";
 import { Loader } from "../components/Loader";
-import type { User } from "firebase/auth";
-import type { Participant, Team } from "../types";
+import { copy } from "../config";
+import { Participant, Team } from "../types";
 
 export type DataContextValue = {
   user: User;
@@ -26,8 +29,8 @@ const findTeam = (teams: Team[], participant: Participant) => {
 export const DataContext = createContext<DataContextValue>(null);
 
 export const DataProvider = ({ user, participant, children }: DataProviderProps) => {
-  const [participants, , pError] = useQueryCollection<Participant>("participants");
-  const [teams, , tError] = useQueryCollection<Team>("teams");
+  const [participants, , pError] = useCollectionData(queryParticipants());
+  const [teams, , tError] = useCollectionData<Team>(queryTeams());
 
   const error = pError || tError || "";
 
@@ -37,12 +40,7 @@ export const DataProvider = ({ user, participant, children }: DataProviderProps)
 
   if (error) {
     return (
-      <Center h="100vh">
-        <VStack justify="center">
-          <Heading size="xs">Authorization Error</Heading>
-          <Text>There was an error with getting access to the portal</Text>
-        </VStack>
-      </Center>
+      <Error heading={copy.errors.authorization.heading.text} body={copy.errors.authorization.body.text} />
     );
   }
 
